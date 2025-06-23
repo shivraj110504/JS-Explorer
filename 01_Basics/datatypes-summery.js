@@ -49,3 +49,33 @@ const myFunction = function(){
 //        Arrays  =>  object
 //        Function  =>  function
 //        Object  =>  object
+
+
+// **************************************************************************************************
+
+// Memory => Stack (Primitive), Heap (Non-Primitive)
+
+// ----Stacck-----
+
+let myYoutubeName = "ShivarajTaware"
+let anotherName = myYoutubeName
+
+anotherName = "SakshamLogic"
+
+console.log(myYoutubeName);
+console.log(anotherName);
+
+
+//-----Heap----
+
+let userOne = {
+    email: "shivrajtaware1234@google.com",
+    upi: "shiv@tbl"
+}
+
+let userTwo =userOne
+
+userTwo.email = "user@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
