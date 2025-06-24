@@ -1,3 +1,9 @@
+//Datatypes are divided into two types on the basis of :  How data is stored and How to access the data
+
+//dynamically typed
+// JavaScript is a weakly typed programming language because you do not have to specify the variable type in advance.
+
+
 const name = "Shivraj Taware"
 const repoCount = 20
 
