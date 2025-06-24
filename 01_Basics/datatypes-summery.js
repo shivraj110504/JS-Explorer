@@ -1,3 +1,9 @@
+//Datatypes are divided into two types on the basis of :  How data is stored and How to access the data
+
+//dynamically typed
+// JavaScript is a weakly typed programming language because you do not have to specify the variable type in advance.
+
+
 // **********Primitives***********
 
 // 7 types: String, number, boolean, null, undefined, Symbol, BigIng
