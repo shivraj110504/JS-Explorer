@@ -130,3 +130,53 @@ console.log(Object.entries(myUser));  // => [[ 'name', 'shivraj' ], [ 'email', '
 
 //  console.log(myUser.hasOwnProperty('name')); //true
 //  console.log(myUser.hasOwnProperty('address')); //flase
+
+
+//******************************************************************************//
+
+//De-constructing the objects
+
+const course ={
+    name:"JS in Hindi",
+    courseInstructor:"Hitesh Choudhary",
+    price:999
+}
+console.log(course.courseInstructor); //Hitesh Choudhary
+/*
+If we have to access the 'courseInstructor' multiple time in production level
+we have to write 'course.courseInstructor' again and again, which is not good practice and not a clean code.
+to simplify this process we can use object deconstructor 
+*/
+
+
+
+//declaring the single variable courseInstructor for accessing course.courseInstructor
+
+// const {courseInstructor} = course;
+// console.log(courseInstructor);  // => Hitesh Choudhary
+
+
+//we can also declare the variable for that key property
+const {courseInstructor : instructor } = course;
+console.log(instructor);  // => Hitesh Choudhary
+
+
+//******************** JSON ***************************/
+
+//JSON : Javascript Object Notation
+// we use to fetch the data in JSON format from the APIs 
+
+// JSON format
+// {
+//     "key1" : "value1",
+//     "key2" : "value2",
+//     "key3" : "value3",
+// }
+
+// both the key and value are strings,
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
