@@ -4,12 +4,18 @@
 const myNums = [1, 2, 3]
 
 const myTotal = myNums.reduce(function (acc, currval) {
-    console.log(`acc: ${acc} and currval: ${currval}`);
+    console.log(`acc: ${acc} and currval: ${currval}`); // used to check what values are passing in accumulator and currentValue
     return acc + currval
 }, 0)
 
+
+
+// **************************using arrow function***************
+
 // const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
 // console.log(myTotal);
+
+
 
 
 // const shoppingCart = [
