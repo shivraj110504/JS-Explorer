@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Card</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color:  rgb(1, 1, 1);
+            color: white;
+
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            width: 350px;
+            border-radius: 6px;
+            background-color:#212121;
+            box-shadow: 18px 18px 0 0 rgb(36, 44, 41), 18px 18px 0 4px black;
+        }
+       
+        #myimg{
+            height:130px;
+            width:130px;
+            border-radius:100%;
+            border: 2px solid;
+            margin: 20px;
+        }
+        #followButton, #linkedinButton {
+            background-color: #16bec9; /* Green */
+            border: none;
+            color: rgb(8, 2, 2);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 50%;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="image"><img id="myimg" src="" alt=""></div>
+        <div id="name"></div>
+        <div id="followers">Followers :</div>
+        <button id="followButton">Follow</button>
+        <button id="linkedinButton">LinkedIn</button>
+    </div> 
+
+</body>
+<script>
+    const name = document.getElementById('name');
+    const myimg = document.getElementById('myimg');
+    const followers = document.getElementById('followers');
+    const followButton = document.getElementById('followButton');
+    const linkedinButton = document.getElementById('linkedinButton');
+
+
+    followButton.addEventListener('click', function() {
+        window.location.href = "https://github.com/shivraj110504";
+    });
+    
+    linkedinButton.addEventListener('click', function() {
+        window.location.href = "https://www.linkedin.com/in/shivrajtaware";
+    });
+    const xhr = new XMLHttpRequest();
+    const requestURL = "https://api.github.com/users/shivraj110504"; // Replace with your GitHub username
+    xhr.open('GET',requestURL);
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            myimg.src = `${data.avatar_url}`;
+            name.innerHTML = `Name : ${data.name}`;
+            followers.innerHTML = `Followers : ${data.followers}`;
+
+
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
