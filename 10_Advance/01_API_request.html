@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Request</title>
     <style>
-        body{
-            background-color: #212121;
-        }
+    body {
+      background-color: #212121;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+    }
+    img {
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
     </style>
 </head>
 <body>
@@ -20,9 +29,13 @@
      4	    DONE	            The operation is complete. 
 -->
 
+
+<h1>GitHub Profile</h1>
+<div id="profile"></div>
+
 <script>
  const xhr = new XMLHttpRequest(); // XMLHttpRequest is an object in JavaScript that is used to interact with servers.
- const requestURL = 'https://api.github.com/users/darshanbagade';
+ const requestURL = 'https://api.github.com/users/shivraj110504';
  xhr.open('GET',requestURL); //open() method initializes a request.
 
  //onreadystatechange property should be directly assigned to a function, not invoked like a method.
@@ -33,13 +46,32 @@
     if(xhr.readyState === 4 ){
         //many time the data comes in the form of string, we have to convert it into JSON 
         const data = JSON.parse(this.responseText);
-        console.log("followers:" , data.followers);
+        // console.log("followers:" , data.followers);
+        // console.log(this.responseText)
     }
  }
- xhr.send();// send() method sends the request to the server.
+//  xhr.send();           // send() method sends the request to the server.
 
 
-//*****************************************************************
+//  ***************************** Assignment to Display Profile Image and followers Count with Name *****************************
+
+ xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 ) {
+      const data = JSON.parse(this.responseText);
+      const profileDiv = document.getElementById('profile');
+
+      profileDiv.innerHTML = `
+        <img src="${data.avatar_url}" alt="Avatar">
+        <h2>${data.name }</h2>
+        <p>Followers: ${data.followers}</p>
+        <p> Public Repositories: ${data.public_repos} </p>
+        <p> Joined at: ${data.created_at} </p>
+      `;
+    }
+  };
+xhr.send();                 // send() method sends the request to the server.
+
+//***************************** CONSOLE ************************************
 //Console :
 // console is not a part of JavaScript, it is a part of the browser.
 // it comes from V8 engine opensource library. 
