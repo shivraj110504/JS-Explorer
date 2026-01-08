@@ -32,15 +32,15 @@ const obj3 = { ...obj1, ...obj2 };
 const users = [
   {
     id: 1,
-    name: "sarfaraz"
+    name: "shivraj"
   },
   {
     id: 2,
-    name: "Hussain"
+    name: "darshan"
   },
   {
     id: 3,
-    name: "Kamran"
+    name: "karan"
   }
 ];
 

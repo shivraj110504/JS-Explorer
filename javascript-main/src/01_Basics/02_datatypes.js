@@ -3,9 +3,9 @@
 // alert(3+3); //we are using nodejs, not browser
 
 console.log(3 + 3);
-console.log("sarfaraz");
+console.log("shivraj");
 
-let name = "Sarfaraz";
+let name = "shivraj";
 let age = 37;
 let isLoggedIn = false;
 

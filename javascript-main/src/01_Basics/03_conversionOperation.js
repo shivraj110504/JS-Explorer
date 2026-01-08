@@ -1,5 +1,5 @@
 //----------------- Number conversion ------------------
-let score = "Sarfaraz";
+let score = "Shivraj";
 //let score = true
 // let score = undefined;
 // let score = null;
@@ -17,7 +17,7 @@ let score = "Sarfaraz";
 
 // let isLoggedIn = 1;
 // let isLoggedIn = "";
-// let isLoggedIn = "Sarfaraz";
+// let isLoggedIn = "Shivraj";
 // let booleanIsLoggedIn = Boolean(isLoggedIn);
 // console.log(booleanIsLoggedIn);
 
@@ -41,7 +41,7 @@ console.log(negValue);
 // console.log(2%2);
 
 let str1 = "hello";
-let str2 = "sarfaraz";
+let str2 = "shivraj";
 
 let str3 = str1 + str2;
 console.log(str3);
